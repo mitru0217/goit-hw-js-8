@@ -1,17 +1,11 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
-// Add imports above this line
 import { galleryItems } from './gallery-items';
-// Change code below this line
-
-console.log(galleryItems);
 
 const imageContainer = document.querySelector(".gallery");
 const cardsMarkup = createGalleryCardsMarkup (galleryItems);
 
 imageContainer.insertAdjacentHTML("beforeend", cardsMarkup);
-
-imageContainer.addEventListener("click", onImageContainerClick)
 
 function createGalleryCardsMarkup (galleryItems) {
     return galleryItems
@@ -22,10 +16,6 @@ function createGalleryCardsMarkup (galleryItems) {
       </a>`
     })
     .join("");
-}
-
-function onImageContainerClick (e) {
-  e.target.alt;
 }
 
 let lightbox = new SimpleLightbox('.gallery a', { 
