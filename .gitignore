@@ -109,3 +109,5 @@ dist
 .tern-port
 
 .node_modules/
+
+.parcel-cash/
