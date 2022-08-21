@@ -20,8 +20,8 @@ form.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(e) {
     e.preventDefault();
-    const keys = Object.keys(formData);
-    if(keys === "") {
+    const value = Object.values(formData);
+    if(formData[value] === "") {
         return alert("Please fill all fields");
     }
    
