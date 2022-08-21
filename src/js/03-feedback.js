@@ -21,8 +21,6 @@ form.addEventListener("submit", onFormSubmit);
     console.log (formData); 
  };  
 
-
-
 function onFormSubmit(e) {
     e.preventDefault();
     if(form.name.value === "") {
@@ -30,8 +28,7 @@ function onFormSubmit(e) {
     }
     e.target.reset();
    localStorage.removeItem(STORAGE_KEY);
-//    console.log (formData); 
-formData = {};  
+   formData = {};  
 
 };
  
