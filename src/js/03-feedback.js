@@ -3,12 +3,9 @@ const STORAGE_KEY = `feedback-form-state`;
 const savedInfo = JSON.parse(localStorage.getItem(STORAGE_KEY));
 let formData = savedInfo ?? {};
 
-// const refs = {
-//     form: document.querySelector(".feedback-form"),
-// };
 
 const form = document.querySelector(".feedback-form");
-//  saveLocaleStorage ();
+ saveLocaleStorage ();
 form.addEventListener("input", throttle(onFormChange, 500));
 
 form.addEventListener("submit", onFormSubmit);
@@ -18,7 +15,7 @@ form.addEventListener("submit", onFormSubmit);
 
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 
-    console.log (formData); 
+   
  };  
 
 function onFormSubmit(e) {
@@ -26,14 +23,9 @@ function onFormSubmit(e) {
     if(form.name.value === "") {
         return alert("Please fill all fields");
     }
+    console.log (formData);
     e.target.reset();
-   localStorage.removeItem(STORAGE_KEY);
-   formData = {};  
+    localStorage.removeItem(STORAGE_KEY);
+    formData = {};  
 
 };
- 
-// function saveLocaleStorage () {
-//     if(savedInfo) {
-//         refs.form.elements = savedInfo.elements;
-//  }
-// }
