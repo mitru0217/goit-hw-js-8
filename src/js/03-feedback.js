@@ -18,7 +18,7 @@ form.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(e) {
     e.preventDefault();
-    if(form.elements.name === "") {
+    if(e.target.name === "") {
         return alert("Please fill all fields");
     }
     console.log (formData);
