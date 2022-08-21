@@ -15,7 +15,7 @@ form.addEventListener("submit", onFormSubmit);
  function onFormChange (e) {
     formData[e.target.name] = e.target.value;
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData)); 
-
+    console.log (formData);
  };  
 
 function onFormSubmit(e) {
@@ -24,7 +24,7 @@ function onFormSubmit(e) {
     if(keys === "") {
         return alert("Please fill all fields");
     }
-    console.log (formData);
+   
     e.target.reset();
     localStorage.removeItem(STORAGE_KEY);
     formData = {};  
