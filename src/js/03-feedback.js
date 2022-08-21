@@ -5,7 +5,7 @@ let formData = savedInfo ?? {};
 
 
 const form = document.querySelector(".feedback-form");
- saveLocaleStorage ();
+
 form.addEventListener("input", throttle(onFormChange, 500));
 
 form.addEventListener("submit", onFormSubmit);
@@ -13,19 +13,16 @@ form.addEventListener("submit", onFormSubmit);
  function onFormChange (e) {
     formData[e.target.name] = e.target.value;
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-
-   
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(formData)); 
  };  
 
 function onFormSubmit(e) {
     e.preventDefault();
-    if(form.name.value === "") {
+    if(form.elements.name.value === "") {
         return alert("Please fill all fields");
     }
     console.log (formData);
     e.target.reset();
     localStorage.removeItem(STORAGE_KEY);
     formData = {};  
-
 };
