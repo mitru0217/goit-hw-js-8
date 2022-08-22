@@ -20,11 +20,10 @@ form.addEventListener("submit", onFormSubmit);
 
 function onFormSubmit(e) {
     e.preventDefault();
-    const value = Object.values(formData);
-    if(value === "") {
-        return alert("Please fill all fields");
-    }
-   
+      if (form.name === "") {
+        return alert("Please fill in all the fields!");
+      }
+      console.log(form.name.value);
     e.target.reset();
     localStorage.removeItem(STORAGE_KEY);
     formData = {};  
