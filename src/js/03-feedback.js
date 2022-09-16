@@ -5,6 +5,8 @@ let formData = savedInfo ?? {};
 
 const form = document.querySelector(".feedback-form");
 
+
+
 form.addEventListener("input", throttle(onFormChange, 500));
 
 form.addEventListener("submit", onFormSubmit);
